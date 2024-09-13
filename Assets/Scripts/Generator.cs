@@ -21,6 +21,20 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NewDungeonMaze();
+    }
+
+    public void NewDungeonMaze()
+    {
+        if (board != null)
+        {
+            board.Clear();
+
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
         MazeGenerator();
     }
 
